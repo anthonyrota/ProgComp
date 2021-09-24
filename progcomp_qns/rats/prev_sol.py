@@ -41,8 +41,6 @@ for i in range(1, 10000):
         if n in ns:
             idx = ns.index(n)
             cycle = ns[idx:]
-            if len(cycle) == 18:
-                print(i)
             add_cycle(cycle)
             break
         ns.append(n)
