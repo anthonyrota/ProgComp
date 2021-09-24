@@ -1,0 +1,20 @@
+0000 is 12 midnight
+0030 is half past 12 midnight
+0315 is a quarter past 3am
+0824 is 24 minutes past 8am
+0830 is half past 8am
+0831 is 29 minutes to 9am
+0845 is a quarter to 9am
+1059 is 1 minute to 11am
+1100 is 11am
+1145 is a quarter to 12 noon
+1155 is 5 minutes to 12 noon
+1229 is 29 minutes past 12 noon
+1244 is 16 minutes to 1pm
+1313 is 13 minutes past 1pm
+1533 is 27 minutes to 4pm
+2145 is a quarter to 10pm
+2252 is 8 minutes to 11pm
+2330 is half past 11pm
+2337 is 23 minutes to 12 midnight
+2359 is 1 minute to 12 midnight
