@@ -1,0 +1,16 @@
+goat car goat
+goat goat car
+goat car goat
+goat goat car
+car goat goat
+goat car goat
+car goat goat
+car goat goat
+goat car goat
+car goat goat
+Appears behind first door 490 times
+Appears behind second door 498 times
+Appears behind third door 512 times
+Dormouse points: 506
+Alice points: 734
+Hatters points: 994

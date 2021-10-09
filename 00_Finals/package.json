@@ -1,0 +1,33 @@
+{
+    "name": "root",
+    "private": true,
+    "scripts": {
+        "Task1": "python3 Task1",
+        "Task2": "python3 Task2",
+        "Task3": "python3 Task3",
+        "Task4": "ts-node Task4"
+    },
+    "dependencies": {
+        "@types/react": "^17.0.27",
+        "@types/react-dom": "^17.0.9",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "9.0.1",
+        "@types/node": "14.6.2",
+        "@types/rimraf": "3.0.0",
+        "@typescript-eslint/eslint-plugin": "4.0.1",
+        "@typescript-eslint/parser": "4.0.1",
+        "cspell": "4.1.0",
+        "eslint": "7.8.0",
+        "eslint-config-prettier": "6.11.0",
+        "eslint-import-resolver-typescript": "2.2.1",
+        "eslint-plugin-import": "2.22.0",
+        "eslint-plugin-jest": "23.20.0",
+        "prettier": "2.0.5",
+        "rimraf": "3.0.2",
+        "ts-node": "10.2.1",
+        "typescript": "4.0.3"
+    }
+}

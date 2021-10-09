@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20001102//EN"
+ "http://www.w3.org/TR/2000/CR-SVG-20001102/DTD/svg-20001102.dtd">
+<!-- <svg width="$WIDTH" height="$HEIGHT" -->
+<svg id="root" width="800" height="900"     
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     onload="initTiming();">
+
+<defs>
+  <script type="text/javascript" xlink:href="timing.js" />
+  <style type="text/css">
+  <![CDATA[
+
+    text.C { text-anchor:middle; }   /* centred */
+    text.R { text-anchor:end; }      /* right-justified */
+    text.floornum { font-size:20px; font-family:Gill Sans,Arial,sansserif; font-weight:bold; }
+    text.sign { font-size:12px; font-family:Gill Sans,Arial,sansserif; font-weight:bold; fill:#800000 }
+    text.timer { font-size:16px; font-family:Gill Sans,Arial,sansserif; font-weight:normal; fill:#800000 }
+    text.pause { cursor:pointer; font-size:16px; font-family:Gill Sans,Arial,sansserif; fill:#FFEE00;  font-weight:bold; }
+    text.small { font-size:10px; font-family:Gill Sans,Arial,sansserif; font-weight:bold; fill:#000000 }
+
+    .faint { stroke:#AAAAAA; stroke-width:0.5px; }
+
+    .floor { stroke: #333333; stroke-width:2px; }
+    .liftSide { stroke: #333333; stroke-width:3px; fill:none; }
+    .liftTop { stroke: #333333; stroke-width:1px;  fill:none; }
+    .liftInterior { fill: #EEEEEE; stroke:none; }
+    .updown { stroke-width:1.5px; }
+    rect.sign {  fill: #EEEEEE; stroke: #333333; stroke-width:2px; }
+    .timebox { fill: #FFE4B5; stroke: #333333; stroke-width:1px;  }
+    .pausebox { fill: #F08080; cursor:pointer; }
+    .sliderbox { fill: #F5F5DC;  stroke: #333333; stroke-width:1px; cursor:pointer; }
+    .slider { stroke: #333333; stroke-width:2.5px; }
+  ]]>
+  </style>
+
+  <g id="_updown" transform="translate(-10,-5)">   <!-- Internal use -->
+     <rect x="0" y="0" width="20" height="9" rx="2" ry="2" fill="#333333" stroke="none" />
+     <path d="M10,2 h-6 l3,5.2z" fill="#FFFFFF" />
+     <path d="M10,7.2 h6 l-3,-5.2z" fill="#FFFFFF" />
+  </g>
+
+  <!-- Lift, 3 capacities. Origin is the bottom left of the lift. -->
+  <g id="lift1">
+     <rect x="0" y="-105" width="80" height="105" class="liftInterior" />
+     <path d="M0,0 v-105 m80,0 v105 h-80" class="liftSide" />
+     <path d="M0,0 m0,-105 h80" class="liftTop" />
+     <use xlink:href="#_updown" x="40" y="-110" />
+  </g>
+  <g id="lift2">
+     <rect x="0" y="-105" width="160" height="105" class="liftInterior" />
+     <path d="M0,0 v-105 m160,0 v105 h-160" class="liftSide" />
+     <path d="M0,0 m0,-105 h160" class="liftTop" />
+     <use xlink:href="#_updown" x="80" y="-110" />
+  </g>
+  <g id="lift3">
+     <rect x="0" y="-105" width="240" height="105" class="liftInterior" />
+     <path d="M0,0 v-105 m240,0 v105 h-240" class="liftSide" />
+     <path d="M0,0 m0,-105 h240" class="liftTop" />
+     <use xlink:href="#_updown" x="120" y="-110" />
+  </g>
+
+  <!-- Signs to cap the liftwell, 3 sizes. Origin = bottom left. -->
+  <g id="sign1" transform="translate(0,-20)">
+     <rect width="80" height="20" class="sign" />
+     <text class="sign C" x="40" y="15">ACME Lifts</text>
+  </g>
+  <g id="sign2" transform="translate(0,-20)">
+     <rect width="160" height="20" class="sign" />
+     <text class="sign C" x="80" y="15">ACME Lifts Inc</text>
+  </g>
+  <g id="sign3" transform="translate(0,-20)">
+     <rect width="240" height="20" class="sign" />
+     <text class="sign C" x="120" y="15">ACME Lifts (Global) Inc</text>
+  </g>
+
+  <path id="_tri" d="M0,0 h20 l-10,-12z" class="updown"/>
+  <g id="UP" transform="translate(-10,0)">
+     <use xlink:href="#_tri"  />
+  </g>
+  <g id="DN" transform="translate(-10,0),scale(1,-1)">
+     <use xlink:href="#_tri" />
+  </g>
+
+  <!-- Passenger number = destination floor -->
+  <g id="p1" transform="translate(-30,-82)"> <image xlink:href="SP1.png" width="60" preserveApectRatio="xMidYMid meet" /> </g>
+  <g id="p2" transform="translate(-31,-73)"> <image xlink:href="SP2.png" width="62" preserveApectRatio="xMidYMid meet" /> </g>
+  <g id="p3" transform="translate(-38,-70)"> <image xlink:href="SP3.png" width="76" preserveApectRatio="xMidYMid meet" /> </g>
+  <g id="p4" transform="translate(-27,-74)"> <image xlink:href="SP4.png" width="54" preserveApectRatio="xMidYMid meet" /> </g>
+  <g id="p5" transform="translate(-38,-93.5)"> <image xlink:href="SP5.png" width="76" preserveApectRatio="xMidYMid meet" /> </g>
+  <g id="p6" transform="translate(-20,-96)"> <image xlink:href="SP6.png" width="40" preserveApectRatio="xMidYMid meet" /> </g>
+  <g id="p7" transform="translate(-21,-95)"> <image xlink:href="SP7.png" width="42" preserveApectRatio="xMidYMid meet" /> </g>
+
+
+</defs>
+  <!-- This is the timer block, 360x30px, notionally positioned at the bottom. Can't be in defs or IDs are invisible to JS. 
+       Move it with the <rect id="params" .../> data element -->
+  <g id="timer" transform="translate(5,750)" >
+    <rect id="timeline" x="0" y="12" width="200" height="18" class="sliderbox" onclick="sliderClick(evt)" />
+    <line id="slider" x1="0" y1="12" x2="0" y2="30" class="slider" />
+    <text id="tmin" x="0" y="10" class="small">0</text>
+    <text id="tmax" x="200" y="10" class="small R"></text>
+    <rect x="220" y="0" width="40" height="30" class="timebox" />
+    <text id="timetext" class="timer C" x="240" y="22" width="40" height="30">0</text>
+    <path d="M280,0 v30 h80 v-30 Z" class="pausebox" onclick="pause(evt)" />
+    <text id="pausetext" x="320" y="21" class="pause C" onclick="pause(evt)">Pause</text>
+  </g>

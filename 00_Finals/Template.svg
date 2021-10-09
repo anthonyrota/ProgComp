@@ -1,0 +1,2 @@
+<!-- BASIC ANIMATION -->
+<animate attributeName="x" fill = "freeze" begin="23.6s" = dur="0.4s" to="550"/>
